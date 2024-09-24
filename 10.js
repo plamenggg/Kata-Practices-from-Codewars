@@ -33,7 +33,7 @@ function sc(floor){
             result += 'Aa~ '
         }
         return result += 'Pa! Aa!'
-    }
+    }  
     for (i=1; i<floor; i++) {
         result += 'Aa~ '
     }
