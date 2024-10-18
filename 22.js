@@ -234,3 +234,22 @@ const [[, rating], [, ratingsCount]] = ratings;
 
 const ratingStars = [63405, 1808];
 const [fiveStarRating, oneStarRatings, threeStarRatings = 0] = ratingStars;
+
+const { title, author, ISBN } = books[0];
+
+const { keywords: tags } = books[0];
+
+const { language, programmingLanguage = "unknowm" } = books[6];
+
+let bookTitle = 'unknown';
+let bookAuthor = 'unknown';
+
+({bookTitle, bookAuthor}) = books[0];
+
+const {thirdParty:{goodreads:{rating: bookRating}}} = books[0];
+
+function printBookInfo({title, author, year}) {
+    console.log(`${title} by ${author}, ${year}.`)
+}
+
+printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick', year: '2011' });
