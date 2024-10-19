@@ -17,3 +17,7 @@ const newBook2 = {
   author: ["Brian W. Kernighan", "Dennis M. Ritchie"],
   pages,
 };
+
+function getFirstKeyword(obj) {
+  return obj.keyWords?.[0];
+}

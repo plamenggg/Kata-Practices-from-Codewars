@@ -67,3 +67,23 @@ printGoals("Davies", "Muller", "Lewandowski", "Kimmich");
 printGoals(...game.scored);
 
 team1 < team2 && console.log(`Team 1 is more likely to win`);
+
+//1.
+
+for (const [index, player] of game.scored.entries()) {
+  console.log(`Goal ${index + 1}: ${player}`);
+}
+
+//2.
+let odd = 0;
+for (const num of Object.values(game.odds)) {
+  odd += num;
+}
+console.log(odd / Object.values(game.odds).length);
+
+//3.
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === "x" ? "draw" : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr} ${odd}`);
+}
