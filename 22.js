@@ -260,3 +260,18 @@ function spellWord(string) {
   console.log(...string);
 }
 
+const [mainKeyword, ... rest] = books[0].keywords;
+
+const {publisher: bookPublisher, ...restoFTheBook} = books[1];
+
+function printBookAuthorsCount(title,...authors) {
+  console.log(`The book "${title}" has ${authors.length} authors.`)
+}
+
+function hasExamplesInJava(obj) {
+  return obj.programmingLanguage === 'Java' || 'no data available'
+}
+
+for (let i = 0; i < books.length; i++) {
+  books[i].onlineContent && console.log(`"${books[i].title}" provides online content`);
+}
