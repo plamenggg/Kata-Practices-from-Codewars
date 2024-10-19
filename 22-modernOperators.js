@@ -1,3 +1,5 @@
+//Modern Operators
+
 const books = [
   {
     title: "Algorithms",
@@ -223,6 +225,18 @@ const books = [
   },
 ];
 
+const allAuthors = [];
+
+for (const book of books) {
+  Array.isArray(book.author) ? allAuthors.push(...book.author) : allAuthors.push(book.author);
+}
+
+console.log(allAuthors);
+
+for (const [index, author] of allAuthors.entries()) {
+  console.log(`${index+1}. ${author}`)
+}
+
 const [firstBook, secondBook] = books;
 const [, , thirdBook] = books;
 
@@ -280,3 +294,18 @@ for (let i = 0; i < books.length; i++) {
 for (let i = 0; i < books.length; i++) {
   books[i].onlineContent ?? console.log(`"${books[i].title} provides no data about its online content"`);
 }
+
+for (let i = 0; i < books.length; i++) {
+  books[i].edition ||= 1;
+}
+
+for (let i = 0; i < books.length; i++) {
+  books[i].highlighted &&= !(books[i].thirdParty.goodreads.rating < 4.2)
+}
+
+let pageSum = 0;
+
+for (const book of books) {
+  pageSum+= book.pages;
+}
+
