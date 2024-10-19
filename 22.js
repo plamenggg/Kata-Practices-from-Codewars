@@ -253,3 +253,10 @@ function printBookInfo({title, author, year}) {
 }
 
 printBookInfo({ title: 'Algorithms', author: 'Robert Sedgewick', year: '2011' });
+
+const bookAuthors = [...books[0].author,...books[0].author];
+
+function spellWord(string) {
+  console.log(...string);
+}
+
