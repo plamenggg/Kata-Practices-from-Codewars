@@ -275,3 +275,8 @@ function hasExamplesInJava(obj) {
 for (let i = 0; i < books.length; i++) {
   books[i].onlineContent && console.log(`"${books[i].title}" provides online content`);
 }
+
+
+for (let i = 0; i < books.length; i++) {
+  books[i].onlineContent ?? console.log(`"${books[i].title} provides no data about its online content"`);
+}
