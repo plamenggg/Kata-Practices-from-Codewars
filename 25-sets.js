@@ -240,3 +240,21 @@ const uniqueKeywordsArr = [...newSet];
 console.log(uniqueKeywordsArr);
 
 newSet.clear();
+
+const firstBookMap = new Map(Object.entries(books[0]));
+
+for (const [key, value] of firstBookMap) {
+  if (typeof value === "number") console.log(key);
+}
+
+console.log(
+  books[0].ISBN["6"],
+  books[0].ISBN["4"],
+  books[0].ISBN["9"],
+  books[0].ISBN[8]
+);
+
+const quote =
+  "A computer once beat me at chess, but it was no match for me at kick boxing";
+
+console.log(quote.slice(quote.lastIndexOf(" ") + 1));
