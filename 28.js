@@ -31,3 +31,32 @@ function logBookTheme(title) {
     );
   }
 }
+
+function getKeywordsAsString(books) {
+  const keywords = [];
+
+  for (const book of books) {
+    keywords.push(...book.keywords);
+  }
+
+  const uniqueKeywords = [...new Set(keywords)];
+
+  return uniqueKeywords.join(";");
+}
+
+const bookChapters = [
+  ["The Basics", 14],
+  ["Sorting", 254],
+  ["Searching", 372],
+  ["Graphs", 526],
+  ["Strings", 706],
+];
+
+function logChapterBooks(input) {
+  for (const chapter of input) {
+    const [title, pages] = chapter;
+    console.log(`${title}____${pages}`);
+  }
+}
+
+logChapterBooks(bookChapters);
