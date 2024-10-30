@@ -42,3 +42,43 @@ greeter("Joe");
 const greet2 = (greeting) => (name2) => console.log(`${greeting} ${name2}`);
 
 greet2("Hello")("Steve");
+
+const lufthansa = {
+  airline: "Lufthansa",
+  iataCode: "LH",
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNum}`
+    );
+    this.bookings.push({
+      flight: `${this.iataCode}${flightNum}`,
+      name: `${name}`,
+    });
+  },
+};
+
+lufthansa.book(239, "Steve Jacobs");
+console.log(lufthansa);
+
+const eurowings = {
+  airline: "Eurowings",
+  iataCode: "EW",
+  bookings: [],
+};
+
+const book = lufthansa.book;
+
+book.call(eurowings, 23, "Sarah Koll");
+
+const flightData = [565, "George Shull"];
+book.apply(eurowings, flightData);
+console.log(eurowings);
+
+const bookEW = book.bind(eurowings);
+bookEW(24, "Carol Sholz");
+console.log(eurowings);
+
+const addTax = (rate, value) => value + value * rate;
+const addVat = addTax.bind(null, 0.23);
+console.log(addVat(100));
